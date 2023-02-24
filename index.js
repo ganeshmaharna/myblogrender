@@ -24,5 +24,6 @@ app.listen(PORT,()=>{
 });
 const USERNAME=process.env.DB_USERNAME;
 const PASSWORD=process.env.DB_PASSWORD;
-const URL=`mongodb://${USERNAME}:${PASSWORD}@ac-aqozdhd-shard-00-00.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-01.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-02.hnuvxv0.mongodb.net:27017/?ssl=true&replicaSet=atlas-sap4ux-shard-0&authSource=admin&retryWrites=true&w=majority`;
+const URL=process.env.MONGO_URI || `mongodb://${USERNAME}:${PASSWORD}@ac-aqozdhd-shard-00-00.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-01.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-02.hnuvxv0.mongodb.net:27017/?ssl=true&replicaSet=atlas-sap4ux-shard-0&authSource=admin&retryWrites=true&w=majority`;
 Connection(URL);
+// mongodb://Techganesh:756019@ac-aqozdhd-shard-00-00.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-01.hnuvxv0.mongodb.net:27017,ac-aqozdhd-shard-00-02.hnuvxv0.mongodb.net:27017/?ssl=true&replicaSet=atlas-sap4ux-shard-0&authSource=admin&retryWrites=true&w=majority
